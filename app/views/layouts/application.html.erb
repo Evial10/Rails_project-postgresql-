@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TraslatorOnPostgresql</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+	
+<table>
+<tr>
+  <% if current_user %>
+    <td> Your login: <%= current_user.login %></td>
+    <td><%= link_to 'Sign Out', sign_out_path, method: :delete %></td>
+  <% else %>
+    <td><%= link_to 'Sign In', sign_in_path %></td>
+  <% end %>
+</tr>
+</table> 
+       
+<%= yield %>
+
+</body>
+</html>

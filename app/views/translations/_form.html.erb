@@ -1,0 +1,17 @@
+<%= form_for @translation do |f| %>
+  <p>
+    <%= f.label :language %><br>
+    <%= f.select(:language, @langs.collect { |key, lang| [lang, key] }) %>      
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text, size: "60x30" %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', translations_path %>

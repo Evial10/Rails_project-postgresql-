@@ -1,0 +1,21 @@
+<h1>Your translation</h1>
+
+<table>
+  <tr>
+  <th>Languge</th>
+  <th>Text</th>
+  <th>Transalted text</th>
+  </tr>  
+  <% @translations.each do |translation| %>
+  <tr>
+  <td><%= @langs[translation.language] %></td>
+  <td><%= translation.text %></td>
+  <td><%= translation.translated_text %></td>
+  <td><%= link_to 'Edit', edit_translation_path(translation) %></td>
+  <td><%= link_to 'Delete', translation_path(translation),
+          method: :delete %></td>
+  </tr>
+  <% end %>  
+</table>
+
+<%= link_to 'Create new translation', new_translation_path %>
